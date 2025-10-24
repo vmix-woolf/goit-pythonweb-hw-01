@@ -1,33 +1,40 @@
+default_stages: [ pre-commit ]
+default_language_version:
+  python: python3.12
+
 repos:
   - repo: https://github.com/psf/black
     rev: 25.1.0
     hooks:
       - id: black
-        name: black
+        name: black (formatter)
         language_version: python3.12
-        files: ^(vehicles|tests|main)\.py$
+        files: ^(hw01_factory|hw02_solid)/
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.4.7
+    rev: v0.4.5
     hooks:
       - id: ruff
-        name: ruff (legacy alias)
-        files: ^(vehicles|tests|main)\.py$
+        name: ruff (linter)
+        language_version: python3.12
+        files: ^(hw01_factory|hw02_solid)/
       - id: ruff-format
-        name: ruff format
-        files: ^(vehicles|tests|main)\.py$
+        name: ruff (formatter)
+        language_version: python3.12
+        files: ^(hw01_factory|hw02_solid)/
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.8.0
     hooks:
       - id: mypy
-        name: mypy
-        additional_dependencies: [ types-requests, types-setuptools ]
-        files: ^(vehicles|tests|main)\.py$
+        name: mypy (type checker)
+        language_version: python3.12
+        files: ^(hw01_factory|hw02_solid)/
 
   - repo: https://github.com/pycqa/isort
-    rev: 5.13.2
+    rev: 5.12.0
     hooks:
       - id: isort
-        name: isort
-        files: ^(vehicles|tests|main)\.py$
+        name: isort (imports)
+        language_version: python3.12
+        files: ^(hw01_factory|hw02_solid)/
