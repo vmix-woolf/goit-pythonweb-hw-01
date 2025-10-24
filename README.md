@@ -14,7 +14,7 @@
 
 ## Environment
 
-- macOS Sequoia
+- macOS Tahoe
 - Python 3.12.12 (`pyenv + poetry`)
 - Poetry 2.x
 - Ruff 0.14.x, Mypy 1.18.x, Black 25.x, isort 7.x, pytest 8.x, pre-commit 4.x
