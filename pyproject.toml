@@ -1,0 +1,51 @@
+[project]
+name = "goit-pythonweb-hw-01"
+version = "0.1.0"
+description = "Homework project 01"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Viachesalv", email = "viachesalv.leo.mykhailov@gmail.com" }
+]
+requires-python = ">=3.12,<3.13"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+lint.select = ["E", "F", "I", "N", "UP", "B", "W"]
+lint.ignore = ["E203"]
+fix = true
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unused_configs = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+no_implicit_optional = true
+explicit_package_bases = true
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.9.0"
+ruff = "^0.14.2"
+mypy = "^1.18.2"
+isort = "^7.0.0"
+pytest = "^8.4.2"
+pre-commit = "^4.3.0"

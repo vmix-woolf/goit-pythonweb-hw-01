@@ -1,0 +1,33 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 25.1.0
+    hooks:
+      - id: black
+        name: black
+        language_version: python3.12
+        files: ^(vehicles|tests|main)\.py$
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.7
+    hooks:
+      - id: ruff
+        name: ruff (legacy alias)
+        files: ^(vehicles|tests|main)\.py$
+      - id: ruff-format
+        name: ruff format
+        files: ^(vehicles|tests|main)\.py$
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.8.0
+    hooks:
+      - id: mypy
+        name: mypy
+        additional_dependencies: [ types-requests, types-setuptools ]
+        files: ^(vehicles|tests|main)\.py$
+
+  - repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        name: isort
+        files: ^(vehicles|tests|main)\.py$
