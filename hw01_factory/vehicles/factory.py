@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 
-from vehicles.base import Vehicle
-from vehicles.concrete import Car, Motorcycle
+from .base import Vehicle
+from .concrete import Car, Motorcycle
 
 
 class VehicleFactory(ABC):

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import logging
 
-from vehicles.factory import EUVehicleFactory, USVehicleFactory
+from hw01_factory.vehicles.factory import EUVehicleFactory, USVehicleFactory
 
 
 def configure_logging() -> None:

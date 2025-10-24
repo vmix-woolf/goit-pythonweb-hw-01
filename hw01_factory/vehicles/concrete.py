@@ -3,7 +3,7 @@ from __future__ import annotations
 import logging
 from dataclasses import dataclass
 
-from vehicles.base import Vehicle
+from .base import Vehicle
 
 
 @dataclass(slots=True)
