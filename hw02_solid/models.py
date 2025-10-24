@@ -1,21 +1,19 @@
 from __future__ import annotations
 
 import logging
+from dataclasses import dataclass
 
-# Налаштовуємо базове логування
+# Налаштовуємо базове логування (єдиний стиль для всієї програми)
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 
 
+@dataclass
 class Book:
     """Клас, що зберігає інформацію про книгу."""
 
-    def __init__(self, title: str, author: str, year: str) -> None:
-        # Назва книги
-        self.title = title
-        # Автор книги
-        self.author = author
-        # Рік видання
-        self.year = year
+    title: str
+    author: str
+    year: int
 
     def __str__(self) -> str:
         """Повертає рядкове представлення книги."""
@@ -24,5 +22,5 @@ class Book:
 
 if __name__ == "__main__":
     # Невеликий самотест для перевірки
-    example = Book("The Pragmatic Programmer", "Andrew Hunt", "1999")
+    example = Book("The Pragmatic Programmer", "Andrew Hunt", 1999)
     logging.info(example)
